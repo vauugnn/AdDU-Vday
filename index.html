@@ -1,31 +1,70 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find your match today!</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>siya na ba talaga?</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-
+<body class="h-screen w-screen overflow-hidden m-0 p-0">
 <div class="relative">
   <img src="https://img.freepik.com/free-vector/blurred-valentine-s-day-wallpaper_23-2148819570.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706745600&semt=ais.png" class="w-full h-screen object-cover">
-  <div class="absolute inset-0 flex flex-col justify-center"> <h1 class="text-6xl font-bold text-center text-red-600">Anita Max Wynn</h1>
+  <div class="absolute inset-0 flex flex-col justify-center items-center"> 
+    <h1 class="text-6xl font-bold text-center text-red-600 sm:text-4xl">SIYA NA BA TALAGA???</h1>
     <div class="m-8">
-      <form class="flex flex-col"> <label for="name" class="text-lg text-white mb-2">Enter your name here:</label>
-        <input type="text" id="name" name="name" class="rounded-md border-2 border-white bg-transparent px-3 py-2 text-white outline-none focus:ring-2 focus:ring-white">
+      <form class="flex flex-col items-center"> 
+        <label for="name" class="text-lg text-red-600 mb-2">calculate mo na yan!</label>
+        <div class="flex flex-col sm:flex-row">
+          <input type="text" id="name1" name="name1" class="w-full sm:w-1/2 rounded-md border-2 border-white bg-transparent px-3 py-2 text-white outline-none focus:ring-2 focus:ring-white mb-2 sm:mb-0 sm:mr-2" placeholder="name mo">
+          <input type="text" id="name2" name="name2" class="w-full sm:w-1/2 rounded-md border-2 border-white bg-transparent px-3 py-2 text-white outline-none focus:ring-2 focus:ring-white" placeholder="name niya">
+        </div>
         <button type="button" class="mt-4 bg-white text-black font-bold py-2 px-4 rounded-full hover:bg-gray-200">Calculate</button>
       </form>
     </div>
     <div class="flex items-top justify-around">
-      <div class="size-64 absolute md:left-0">
-        <img src="https://pbs.twimg.com/media/GBphRaRXgAAmbzN.jpg">
-      </div>
-      <div class="size-64 absolute md:right-0">
-        <img src="https://pbs.twimg.com/media/GBphRaRXgAAmbzN.jpg">
-      </div>
+      <div class="result-display flex justify-center"></div> 
+    </div>
+    <div id="resultContainer" class="text-center">
+     <h5 id="chance" class="text-center"></h5>
     </div>
   </div>
 </div>
+<script src="index.js"></script>
+<button id="playButton">Play</button>
+<div id="player"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '0',
+      width: '0',
+      videoId: 'navG-A4dGWY',
+      playerVars: {
+        autoplay: 0,
+        loop: 1,
+        playlist: 'navG-A4dGWY',
+        controls: 0,
+        showinfo: 0,
+        autohide: 1,
+        modestbranding: 1,
+        vq: 'small'
+      },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  function onPlayerReady(event) {
+    document.getElementById('playButton').addEventListener('click', function() {
+      event.target.playVideo();
+    });
+  }
+</script>
+
 </body>
 </html>
