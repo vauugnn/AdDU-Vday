@@ -19,7 +19,7 @@
           <input type="text" id="name1" name="name1" class="w-full sm:w-1/2 rounded-md border-2 border-white bg-transparent px-3 py-2 text-white outline-none focus:ring-2 focus:ring-white mb-2 sm:mb-0 sm:mr-2" placeholder="name mo">
           <input type="text" id="name2" name="name2" class="w-full sm:w-1/2 rounded-md border-2 border-white bg-transparent px-3 py-2 text-white outline-none focus:ring-2 focus:ring-white" placeholder="name niya">
         </div>
-        <button type="button" class="mt-4 bg-white text-black font-bold py-2 px-4 rounded-full hover:bg-gray-200">Calculate</button>
+        <button type="button" class="mt-4 bg-white text-black font-bold py-2 px-4 rounded-full hover:bg-gray-200">love, love, love!</button>
       </form>
     </div>
     <div class="flex items-top justify-around">
@@ -31,40 +31,6 @@
   </div>
 </div>
 <script src="index.js"></script>
-<button id="playButton">Play</button>
-<div id="player"></div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-
-<script>
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '0',
-      width: '0',
-      videoId: 'navG-A4dGWY',
-      playerVars: {
-        autoplay: 0,
-        loop: 1,
-        playlist: 'navG-A4dGWY',
-        controls: 0,
-        showinfo: 0,
-        autohide: 1,
-        modestbranding: 1,
-        vq: 'small'
-      },
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-  }
-
-  function onPlayerReady(event) {
-    document.getElementById('playButton').addEventListener('click', function() {
-      event.target.playVideo();
-    });
-  }
-</script>
 
 </body>
 </html>

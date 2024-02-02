@@ -8,6 +8,7 @@ const resultDisplay = document.querySelector("#chance");
 const nameInput1 = document.querySelector("#name1");
 const nameInput2 = document.querySelector("#name2");
 
+//takes note of button click and runs the function
 Button.addEventListener("click", () => {
   const existingMessageElement = resultContainer.querySelector('p');
   const existingImageElement = resultContainer.querySelector('img');
@@ -21,7 +22,7 @@ Button.addEventListener("click", () => {
   const name2 = nameInput2.value;
 
   if (name1 === "" || name2 === "") {
-    // Display the message on the webpage
+    // Display the message on the webpage if it's empty
     resultDisplay.textContent = 'mag lagay ka naman ng name';
     return;
   }
@@ -30,7 +31,7 @@ Button.addEventListener("click", () => {
 
   animateNumbers(randomNumber, name1, name2);
 });
-
+//this runs the animation
 function animateNumbers(targetNumber, name1, name2) {
   let currentNumber = 1;
   const intervalId = setInterval(() => {
@@ -40,9 +41,9 @@ function animateNumbers(targetNumber, name1, name2) {
 
     if (currentNumber > targetNumber) {
       clearInterval(intervalId);
-      // Append the final percentage to the existing text
+      // adds the final number to the text 
       resultDisplay.textContent = `${name1} and ${name2}, your love compatibility is: ${targetNumber}%`;
-
+      //this determines the message to be displayed
       let message;
       if (targetNumber >= 0 && targetNumber <= 33) {
         message = 'kawawa ka naman, hanap ka na lang iba. https://bumble.com';
@@ -57,6 +58,7 @@ function animateNumbers(targetNumber, name1, name2) {
       } else if (targetNumber === 100) {
         message = 'sige na nga, kayo na talaga';
       }
+      //this adds the p element and the img element
       const messageElement = document.createElement('p');
       messageElement.textContent = message;
       resultContainer.appendChild(messageElement);
