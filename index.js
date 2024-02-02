@@ -42,7 +42,7 @@ function animateNumbers(targetNumber, name1, name2) {
     if (currentNumber > targetNumber) {
       clearInterval(intervalId);
       // adds the final number to the text 
-      resultDisplay.textContent = `${name1} and ${name2}, your love compatibility is: ${targetNumber}%`;
+      resultDisplay.textContent = `${name1} and ${name2}, mga ${targetNumber}% compatible kayo,,,`;
       //this determines the message to be displayed
       let message;
       if (targetNumber >= 0 && targetNumber <= 33) {
@@ -54,9 +54,9 @@ function animateNumbers(targetNumber, name1, name2) {
       } else if (targetNumber > 77 && targetNumber <= 88) {
         message = 'situationship';
       } else if (targetNumber > 88 && targetNumber <= 99) {
-        message = 'sige go na yan!!';
+        message = 'sige, siya na nga, pero wag ka masyado umasa ha?';
       } else if (targetNumber === 100) {
-        message = 'sige na nga, kayo na talaga';
+        message = 'edi wow, kayo na';
       }
       //this adds the p element and the img element
       const messageElement = document.createElement('p');
